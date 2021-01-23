@@ -31,19 +31,25 @@ export default function Add () {
         <Navbar isAdd={true} />
         <div className='container mt-5'>
             <form>
-                <div class="mb-3">
-                    <label for="name" class="form-label">Nama</label>
-                    <input onChange={fillName} type="text" class="form-control" id="name" aria-describedby="emailHelp"/>
+                <div className="mb-3">
+                    <label for="name" className="form-label">Nama</label>
+                    <input onChange={fillName} type="text" className="form-control" id="name" aria-describedby="emailHelp"/>
                 </div>
-                <div class="mb-3">
-                    <label for="domisili" class="form-label">Domisili</label>
-                    <input onChange={fillDomisili} type="text" class="form-control" id="domisili"/>
+                <div className="mb-3">
+                    <label for="domisili" className="form-label">Domisili</label>
+                    <input onChange={fillDomisili} type="text" className="form-control" id="domisili"/>
                 </div>
-                <div class="mb-3">
-                    <label for="category" class="form-label">Category</label>
-                    <input onChange={fillCategory} type="text" class="form-control" id="category"/>
+                <div className="mb-3">
+                    <label for="category" className="form-label">Category</label>
+                    <select onChange={fillCategory} id="category" className="form-select">
+                        <option disabled>-Choose Category-</option>
+                        <option value='bangunan'>Tukang Bangunan</option>
+                        <option value='listrik' >Tukang Listrik</option>
+                        <option value='kebun'>Tukang Kebun</option>
+                        <option value='lain'>Tukang Lain-lain</option>
+                    </select>
                 </div>
-                <button onClick={submitNew} type="submit" class="btn btn-primary">Submit</button>
+                <button onClick={submitNew} type="submit" className="btn btn-primary">Submit</button>
             </form>
 
         </div>
