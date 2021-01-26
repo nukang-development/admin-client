@@ -2,9 +2,6 @@ import React, { useState } from 'react'
 import {useHistory} from 'react-router-dom'
 import Navbar from '../components/Navbar'
 
-
-
-
 export default function Add () {
     const history = useHistory()
     const[name, setName] = useState('')
@@ -29,8 +26,8 @@ export default function Add () {
     return(
         <>
         <Navbar isAdd={true} />
-        <div className='container mt-5'>
-            <form>
+        <div className='container shadow' style={{ marginTop: "5%", marginBottom: "5%", width: "50%"}}>
+            <form style={{padding: 50}}>
                 <div className="mb-3">
                     <label for="name" className="form-label">Nama</label>
                     <input onChange={fillName} type="text" className="form-control" id="name" aria-describedby="emailHelp"/>
@@ -49,7 +46,7 @@ export default function Add () {
                         <option value='lain'>Tukang Lain-lain</option>
                     </select>
                 </div>
-                <button onClick={submitNew} type="submit" className="btn btn-primary">Submit</button>
+                <button onClick={submitNew} type="submit" className="btn btn-success mt-3"><i class='fas fa-plus-circle'></i> Add Tukang</button>
             </form>
 
         </div>
