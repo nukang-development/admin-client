@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Login from './Pages/Login'
 import Home from './Pages/Home'
 import Add from './Pages/Add'
+import Order from './Pages/Order'
 
 
 function App() {
@@ -17,6 +18,9 @@ function App() {
         </Route>
         <Route  path='/add' >
           <Add />
+        </Route>
+        <Route  path='/order' >
+          <Order />
         </Route>
       </Switch>
     </BrowserRouter>
