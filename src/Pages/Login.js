@@ -1,13 +1,25 @@
 import React, {useState} from 'react'
 import {useHistory} from 'react-router-dom'
 import gambar from '../assets/login.svg'
-
+import Swal from 'sweetalert2'
 import axios from 'axios'
 
 export default function Login () {
     const history = useHistory()
     const [email, setemail] = useState('')
     const [password, setPassword] = useState('')
+    const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 2000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+          toast.addEventListener('mouseenter', Swal.stopTimer)
+          toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+      })
+
 
     function insertemail(e){
         setemail(e.target.value)
@@ -25,12 +37,20 @@ export default function Login () {
             data: {email, password}
         })
         .then(({data}) => {
-
+            Toast.fire({
+                icon: 'success',
+                title: 'Signed in successfully'
+              })
             localStorage.setItem('access_token', data.access_token)
             history.push('/home')
         })
         .catch(err => {
+            Toast.fire({
+                icon: 'error',
+                title: 'Wrong email/password'
+              })
             console.log(err)
+
         })
 
     }

@@ -31,30 +31,29 @@ export default function TukangCard (props) {
         })
         .catch(err => console.log(err))
     }
-    console.log(order);
     if(tukang){
         return(
-            <div className="card me-3" style={{maxWidth: "540px"}}>
+            <div className="card me-3 mb-2 shadow" style={{maxWidth: "540px", backgroundColor: '#f9e0ae', borderRadius: 25}}>
                 <div className="row">
                     <div className="col-4">
-                        <img style={{width: '150px', height: '150px', paddingTop: 20, paddingInline:20, paddingBottom: 20}} className="" src={tukang.avatar_img ? tukang.avatar_img : "https://cdn.pixabay.com/photo/2017/02/23/13/05/profile-2092113_960_720.png"} alt="..."/>
+                        <img  style={{width: '150px', height: '150px', marginTop: 20, marginInline:20, marginBottom: 20, borderRadius: 25}} className="shadow" src={tukang.avatar_img.link ? tukang.avatar_img.link : "https://cdn.pixabay.com/photo/2017/02/23/13/05/profile-2092113_960_720.png"} alt="..."/>
                     </div>
                     <div className="col-8">
                         <div className="card-body">
                             <div className= 'row'>
-                                <h6 style={{ paddingRight: 0, width: "100px"}} className="col"> Name:</h6>
+                                <h6 style={{ paddingRight: 0, width: "100px", color: '#682c0e'}} className="col"> Name:</h6>
                                 <h6 className="col-8 ps-4">{tukang.name}</h6>
                             </div>
                             <div className= 'row'>
-                                <h6 style={{ paddingRight: 0, width: "100px"}} className="col"> Category:</h6>
+                                <h6 style={{ paddingRight: 0, width: "100px", color: '#682c0e'}} className="col"> Category:</h6>
                                 <p className="card-text col-8 ps-4">{tukang.category}</p>
                             </div>
                             <div className= 'row'>
-                                <h6 style={{ paddingRight: 0, width: "100px"}} className="col"> Username:</h6>
+                                <h6 style={{ paddingRight: 0, width: "100px", color: '#682c0e'}} className="col"> Username:</h6>
                                 <p className="col-8 ps-4">{tukang.username}</p>
                             </div>
                             <div className= 'row'>
-                                <h6 style={{ paddingRight: 0, width: "100px"}} className="col"> location:</h6>
+                                <h6 style={{ paddingRight: 0, width: "100px", color: '#682c0e'}} className="col"> location:</h6>
                                 <p className="col-8 ps-4">{tukang.location}</p>
                             </div>
                         <button onClick={() => deleteTukang(tukang._id)} className='btn btn-danger'><i class='far fa-trash-alt'></i> Delete</button>
@@ -84,7 +83,7 @@ export default function TukangCard (props) {
                             </div>
                             <div >
                                 <h6 style={{ paddingRight: 0, width: "100px"}} className="col"> Address:</h6>
-                                <p className="col-8 ps-4" style={{fontFamily: 'monospace', fontSize: 15}}>{order.address}</p>
+                                <p className="col-8 ps-4" style={{fontFamily: 'monospace', fontSize: 15, backgroundColor:'#f9e0ae', padding: 10, width: 300,  borderTopRightRadius: 25}}>{order.address}</p>
                             </div>
                             <div className= 'row'>
                                 <h6 style={{ paddingRight: 0, width: "100px"}} className="col"> Status:</h6>
@@ -92,7 +91,7 @@ export default function TukangCard (props) {
                             </div>
                             <div >
                                 <h6 style={{ paddingRight: 0, width: "100px"}} className="col"> Comment:</h6>
-                                <p className="col-8 ps-4" style={{fontFamily: 'monospace', fontSize: 15}}>{order.comment}</p>
+                                <p className="col-8 ps-4" style={{fontFamily: 'monospace', fontSize: 15, backgroundColor:'#f9e0ae', padding: 10, width: 300, borderBottomRightRadius: 25}}>{order.comment ? order.comment : 'no comment'}</p>
                             </div>
                             <div className= 'row'>
                                 <h6 style={{ paddingRight: 0, width: "100px"}} className="col"> Schedule:</h6>
